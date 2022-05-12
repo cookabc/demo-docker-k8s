@@ -29,7 +29,12 @@ tasks.withType<KotlinCompile> {
         jvmTarget = "11"
     }
 }
-
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+tasks.jar {
+    enabled = false
+}
+tasks.bootJar {
+    setProperty("archiveFileName", "HelloWorld.jar")
 }
